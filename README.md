@@ -114,7 +114,7 @@ Here is the head of my cleaned DataFrame:
 
 <iframe
   src="assets/gold15_hist.html"
-  style="width: 100%; max-width: 820px; height: 345px; border: none; display: block; margin: 0 auto;"
+  style="width: 100%; max-width: 820px; height: 395px; border: none; display: block; margin: 0 auto;"
 ></iframe>
 
 This histogram shows `golddiffat15`. It is centered around 0 and looks roughly symmetric. This makes sense because each game gives one positive value for one team and one negative value for the other team.
@@ -123,7 +123,7 @@ This histogram shows `golddiffat15`. It is centered around 0 and looks roughly s
 
 <iframe
   src="assets/gold15_box.html"
-  style="width: 100%; max-width: 820px; height: 345px; border: none; display: block; margin: 0 auto;"
+  style="width: 100%; max-width: 820px; height: 395px; border: none; display: block; margin: 0 auto;"
 ></iframe>
 
 This box plot compares `golddiffat15` for winning teams and losing teams. We can see that winning teams usually have much higher gold differential at 15 minutes. This means early-game gold lead is strongly related to the final result.
@@ -187,7 +187,7 @@ I tested whether the missingness of `golddiffat25` depends on `gamelength` and `
 
 <iframe
   src="assets/missingness_perm.html"
-  style="width: 100%; max-width: 820px; height: 345px; border: none; display: block; margin: 0 auto;"
+  style="width: 100%; max-width: 820px; height: 395px; border: none; display: block; margin: 0 auto;"
 ></iframe>
 
 The observed statistic is far from the center of the permutation distribution, which supports the idea that the missingness of `golddiffat25` depends on game length.
@@ -214,7 +214,7 @@ This means that, in this dataset, winning teams usually have much higher gold di
 
 <iframe
   src="assets/hypothesis_perm.html"
-  style="width: 100%; max-width: 820px; height: 345px; border: none; display: block; margin: 0 auto;"
+  style="width: 100%; max-width: 820px; height: 395px; border: none; display: block; margin: 0 auto;"
 ></iframe>
 
 ---
@@ -341,7 +341,7 @@ So, I do not have enough evidence to say the model is unfair across sides. The b
 
 <iframe
   src="assets/fairness_perm.html"
-  style="width: 100%; max-width: 820px; height: 345px; border: none; display: block; margin: 0 auto;"
+  style="width: 100%; max-width: 820px; height: 395px; border: none; display: block; margin: 0 auto;"
 ></iframe>
 
 ---
