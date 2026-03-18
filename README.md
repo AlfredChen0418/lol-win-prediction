@@ -1,8 +1,4 @@
-# Early-Game Advantage and Winning in Professional League of Legends
-
-**Alfred Chen**
-
-This project studies one main question:
+This analysis examines one main question:
 
 **Do teams with stronger early-game advantages at 15 minutes tend to win more often in professional League of Legends?**
 
@@ -10,7 +6,7 @@ This project studies one main question:
 
 ## Introduction
 
-This project uses Oracle’s Elixir match data from 2025 professional League of Legends games.
+This analysis uses Oracle’s Elixir match data from 2025 professional League of Legends games.
 
 Since each game appears in both player rows and team rows, I only use the team rows here. My main question is whether stronger early-game advantage at 15 minutes is closely related to winning.
 
@@ -119,7 +115,7 @@ Here is the head of my cleaned DataFrame:
 <iframe
   src="assets/gold15_hist.html"
   width="850"
-  height="600"
+  height="440"
   frameborder="0"
 ></iframe>
 
@@ -130,7 +126,7 @@ This histogram shows `golddiffat15`. It is centered around 0 and looks roughly s
 <iframe
   src="assets/gold15_box.html"
   width="850"
-  height="600"
+  height="440"
   frameborder="0"
 ></iframe>
 
@@ -196,7 +192,7 @@ I tested whether the missingness of `golddiffat25` depends on `gamelength` and `
 <iframe
   src="assets/missingness_perm.html"
   width="850"
-  height="600"
+  height="440"
   frameborder="0"
 ></iframe>
 
@@ -225,7 +221,7 @@ This means that, in this dataset, winning teams usually have much higher gold di
 <iframe
   src="assets/hypothesis_perm.html"
   width="850"
-  height="600"
+  height="440"
   frameborder="0"
 ></iframe>
 
@@ -233,7 +229,7 @@ This means that, in this dataset, winning teams usually have much higher gold di
 
 ## Framing a Prediction Problem
 
-In this project, I want to predict whether a team will win the game using only information available at 15 minutes.
+In this analysis, I predict whether a team will win the game using only information available at 15 minutes.
 
 This is a **binary classification** problem. The response variable is `result`, which I coded as win or loss.
 
@@ -332,20 +328,6 @@ Using a significance level of 0.05, I failed to reject the null hypothesis.
 
 So, I do not have enough evidence to say the model is unfair across sides. The blue-side accuracy is a little higher than the red-side accuracy, but the difference is very small and can easily happen by chance.
 
----
-
-## Conclusion
-
-Overall, this project shows that early-game advantage at 15 minutes is strongly related to winning in professional League of Legends.
-
-From the exploratory analysis, teams with larger gold leads at 15 minutes clearly win more often. The hypothesis test supports this pattern, since winning teams have much higher `golddiffat15` than losing teams in this dataset.
-
-For prediction, even a simple baseline model using only `side` and `golddiffat15` already performs reasonably well. After adding more 15-minute features and two engineered features, the final model improves slightly, which suggests that early-game information does help explain match outcome.
-
-Finally, the fairness analysis does not show strong evidence that the final model performs differently across blue-side and red-side teams.
-
-Taken together, the results suggest that 15-minute game state provides meaningful information about who will win, although it does not fully determine the final result.
-
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -368,7 +350,7 @@ Taken together, the results suggest that 15-minute game state provides meaningfu
 <iframe
   src="assets/fairness_perm.html"
   width="850"
-  height="600"
+  height="440"
   frameborder="0"
 ></iframe>
 ---
